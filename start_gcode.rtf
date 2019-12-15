@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red21\green21\blue21;\red244\green245\blue246;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c10980\c10980\c10980;\cssrgb\c96471\c96863\c97255;\cssrgb\c0\c0\c0;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+; Ender 3 Custom Start G-code\
+M140 S\{material_bed_temperature_layer_0\} ; Set Heat Bed temperature\
+M117 Bed is warming!\
+M190 S\{material_bed_temperature_layer_0\} ; Wait for Heat Bed temperature\
+M104 S160; start warming extruder to 168\
+G28 ; Home all axes\
+G29 ; Auto bed-level (BL-Touch)\
+G92 E0 ; Reset Extruder\
+M104 S\{material_print_temperature_layer_0\} ; Set Extruder temperature\
+G1 X0.1 Y20 Z50 F5000.0 ; Move to start position\
+M109 S\{material_print_temperature_layer_0\} ; Wait for Extruder temperature\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1\fs24 \cf4 \cb1 G1 X0.1 Y20 Z0.3 F5000.0 ; Move to start position
+\f0\fs26 \cf2 \cb3 \
+
+\f1\fs24 \cf4 \cb1 G1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line\
+G1 X0.4 Y200.0 Z0.3 F5000.0 ; Move to side a little\
+G1 X0.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line\
+G92 E0 ; Reset Extruder\
+G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
+\f0\fs26 \cf2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+\cf2 G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed\
+; End of custom start GCode}
